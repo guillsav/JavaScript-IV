@@ -29,6 +29,11 @@ class Instructor extends Person {
       `${student.name} receives a perfect score on ${subject}`
     );
   }
+  addOrSubtract(student) {
+    let randomNumber = Math.floor(Math.random() * (101 - 1) + 1);
+    randomNumber > student.grade ? --student.grade : ++student.grade;
+    return console.log(student.grade);
+  }
 }
 
 class Student extends Person {
@@ -36,6 +41,7 @@ class Student extends Person {
     super(studAttrs);
     this.className = studAttrs.className;
     this.favSubjects = studAttrs.favSubjects;
+    this.grade = studAttrs.grade;
   }
   listsSubjects(favSubjects) {
     return this.favSubjects.forEach((subject, index) =>
@@ -78,7 +84,8 @@ const fred = new Instructor({
 const guillaume = new Student({
   name: 'Guillaume',
   className: 'WEB18',
-  favSubjects: ['HTML', 'CSS', 'Javascript']
+  favSubjects: ['HTML', 'CSS', 'Javascript'],
+  grade: 80
 });
 
 const daniel = new ProjectManager({
@@ -95,3 +102,8 @@ guillaume.PRAssignment('NodeJS');
 
 daniel.standUp('web18_dan');
 daniel.debugsCode(guillaume, 'Javascript Callbacks');
+
+fred.addOrSubtract(guillaume);
+daniel.addOrSubtract(guillaume);
+fred.addOrSubtract(guillaume);
+daniel.addOrSubtract(guillaume);
