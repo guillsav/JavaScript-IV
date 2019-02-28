@@ -37,7 +37,9 @@ class Instructor extends Person {
     student.grade / 100 > 0.7
       ? console.log(`${student.name} is ready to graduate.`)
       : console.log(
-          `Did not graduate, go back to grading ${student.name}'s assignments!`
+          `Unfortunately ${
+            student.name
+          } did not graduate, please continue grading this student's assignments!`
         );
   }
 }
