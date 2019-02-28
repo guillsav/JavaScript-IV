@@ -91,7 +91,7 @@ const fred = new Instructor({
 });
 
 const daniel = new ProjectManager({
-  name: 'danieliel',
+  name: 'daniel',
   gradClassName: 'CS1',
   favInstructor: 'Sean'
 });
