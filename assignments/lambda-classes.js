@@ -63,6 +63,7 @@ class ProjectManager extends Instructor {
 class Student extends Person {
   constructor(studAttrs) {
     super(studAttrs);
+    this.previousBackground = studAttrs.previousBackground;
     this.className = studAttrs.className;
     this.favSubjects = studAttrs.favSubjects;
     this.grade = studAttrs.grade;
@@ -87,41 +88,51 @@ const fred = new Instructor({
   catchPhrase: `Don't forget the homies`
 });
 
-const dan = new ProjectManager({
-  name: 'Dan',
+const daniel = new ProjectManager({
+  name: 'danieliel',
   gradClassName: 'CS1',
   favInstructor: 'Sean'
 });
 
-const john = new Student({
-  name: 'John',
-  location: 'New York',
-  age: 22,
+const guillaume = new Student({
+  name: 'Guillaume',
+  location: 'Bloomfield, NJ',
+  age: 35,
   gender: 'male',
+  previousBackground: 'UI Designer',
   className: 'WEB18',
-  favSubjects: ['HTML', 'CSS', 'Javascript'],
+  favSubjects: [
+    'Sketch',
+    'AdobeXD',
+    'HTML',
+    'CSS',
+    'Javascript',
+    'React',
+    'Mexico'
+  ],
   grade: 69
 });
 
 // MVP goals
 console.log(`\n==== Instructor ==== `);
 fred.demo('React');
-fred.grade(john, 'CSS flexBox');
+fred.grade(guillaume, 'Advanced CSS');
 
 console.log(`\n==== Project manager ==== `);
-dan.standUp('web18_dan');
-dan.debugsCode(john, 'Javascript callbacks');
+daniel.standUp('web18_dan');
+daniel.debugsCode(guillaume, 'Javascript callbacks');
 
 console.log(`\n==== Student ==== `);
-john.listsSubjects();
-john.PRAssignment('NodeJS');
+console.log(guillaume);
+guillaume.listsSubjects();
+guillaume.PRAssignment('JavaScript Fundamentals');
 
 // Stretch goals
 console.log(`\n==== Add or subtract to student grade ==== `);
-fred.addOrSubtractToGrade(john);
-dan.addOrSubtractToGrade(john);
-fred.addOrSubtractToGrade(john);
-dan.addOrSubtractToGrade(john);
+fred.addOrSubtractToGrade(guillaume);
+daniel.addOrSubtractToGrade(guillaume);
+fred.addOrSubtractToGrade(guillaume);
+daniel.addOrSubtractToGrade(guillaume);
 
 console.log(`\n==== Check if student ready to graduate ==== `);
-fred.readyToGraduate(john);
+fred.readyToGraduate(guillaume);
