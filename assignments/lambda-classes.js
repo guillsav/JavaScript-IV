@@ -115,10 +115,12 @@ const guillaume = new Student({
 
 // MVP goals
 console.log(`\n==== Instructor ==== `);
+console.log(fred);
 fred.demo('React');
 fred.grade(guillaume, 'Advanced CSS');
 
 console.log(`\n==== Project manager ==== `);
+console.log(daniel);
 daniel.standUp('web18_dan');
 daniel.debugsCode(guillaume, 'Javascript callbacks');
 
