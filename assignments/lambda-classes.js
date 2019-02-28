@@ -92,6 +92,9 @@ const fred = new Instructor({
 
 const daniel = new ProjectManager({
   name: 'daniel',
+  location: 'United States',
+  age: 28,
+  gender: 'male',
   gradClassName: 'CS1',
   favInstructor: 'Sean'
 });
@@ -117,12 +120,10 @@ const guillaume = new Student({
 
 // MVP goals
 console.log(`\n==== Instructor ==== `);
-console.log(fred);
 fred.demo('React');
 fred.grade(guillaume, 'Advanced CSS');
 
 console.log(`\n==== Project manager ==== `);
-console.log(daniel);
 daniel.standUp('web18_dan');
 daniel.debugsCode(guillaume, 'Javascript callbacks');
 
